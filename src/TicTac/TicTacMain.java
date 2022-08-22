@@ -15,8 +15,19 @@ public class TicTacMain {
 		board.showBoard();
 		//Initiating toss
 		int toss=board.toss();
+		switch(toss) {
+		case 1:{
 
+				board.playerMove(input);
+				board.showBoard();
+				break;
+		}
+		case 0:{
 
+				board.playerMove(input);
+				board.showBoard();
+		}
+		}
 	}
 
 }
