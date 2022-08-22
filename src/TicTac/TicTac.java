@@ -370,5 +370,17 @@ public class TicTac {
 			return false;
 		return true;
 	}
+	/**Checks if player wants rematch
+	 * @return true-Rematch
+	 * false-Exit Program
+	 */
+	public boolean askRematch() {
+		System.out.println("Do you want a rematch? (y/n): ");
+		char choice = (sc.next().toLowerCase()).charAt(0);
+		if(choice=='y')
+			return true;
+		else
+			return false;
+	}
 
 }
