@@ -1,5 +1,6 @@
 package TicTac;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTac {
@@ -100,6 +101,25 @@ public class TicTac {
 				break;
 			}
 		}while(index!=0);
+	}
+	/**
+	 * Method to check who plays first computer or user
+	 * Random generates two values 0 and 1.
+	 * if it is 0,it prints computer play first
+	 * otherwise user plays first
+	 * @return
+	 */
+
+	public int toss() {
+		Random  r=new Random();
+		int randomNum=r.nextInt(2);
+		System.out.println(randomNum);
+		if(randomNum==0) {
+			System.out.println("Computer won the Toss.");
+		}else {
+			System.out.println("User won the Toss.");
+		}
+		return randomNum;
 	}
 
 }
