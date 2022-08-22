@@ -80,5 +80,26 @@ public class TicTac {
 			return 0;
 		}
 	}
+	/**
+	 * Method to check if space is available in the board.
+	 * It checks free space is available or not before make a move.
+	 * Count the number of spaces available.It extends UC4.
+	 * @param input
+	 */
+
+	public void playerMove(char[] input) {
+		int index;
+		do {
+			System.out.print("Enter position - ");
+			int in=sc.nextInt();
+			index=checkMoveOk(in);
+			if (index==0) {
+				System.out.println("Cannot make move.");
+			}else {
+				board[index]=input[0];
+				break;
+			}
+		}while(index!=0);
+	}
 
 }
