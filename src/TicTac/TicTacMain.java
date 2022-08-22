@@ -13,6 +13,8 @@ public class TicTacMain {
 		//display empty board
 		System.out.println("Displaying empty board->");
 		board.showBoard();
+		//Initiating toss
+		int toss=board.toss();
 
 	}
 
