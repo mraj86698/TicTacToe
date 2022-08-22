@@ -6,7 +6,10 @@ public class TicTacMain {
 
 		System.out.println("Welcome to Tic Tac Toe Game");
 		TicTac board = new TicTac();
+		//create new board
 		board.createBoard();
+		//asking for choice of char
+		char[] input=board.getInput();
 
 	}
 
