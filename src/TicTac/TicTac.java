@@ -172,5 +172,65 @@ public class TicTac {
 		//1 returned to show game has ended.
 		return 1;
 	}
+	/**Provides Computer logic to move a win position.
+	 * @param CharArray containing x and o
+	 */
+	public boolean computerMoveToWin(char[] input) {
+		//choose which char to put in board
+		char computer=input[1];
+
+		//makes Comp move in order to win
+		if(board[1]==computer && board[2]==computer && board[3]==0)
+			board[3] = computer;
+		else if(board[1]==computer && board[2]==0 && board[3]==computer)
+			board[2] = computer;
+		else if(board[1]==0 && board[2]==computer && board[3]==computer)
+			board[1] = computer;
+		else if(board[4]==computer && board[5]==computer && board[6]==0)
+			board[6] = computer;
+		else if(board[4]==computer && board[5]==0 && board[6]==computer)
+			board[5] = computer;
+		else if(board[4]==0 && board[5]==computer && board[6]==computer)
+			board[4] = computer;
+		else if(board[7]==computer && board[8]==computer && board[9]==0)
+			board[9] = computer;
+		else if(board[7]==computer && board[8]==0 && board[9]==computer)
+			board[8] = computer;
+		else if(board[7]==0 && board[8]==computer && board[9]==computer)
+			board[7] = computer;
+		else if(board[1]==computer && board[4]==computer && board[7]==0)
+			board[7] = computer;
+		else if(board[1]==computer && board[4]==0 && board[7]==computer)
+			board[4] = computer;
+		else if(board[1]==0 && board[4]==computer && board[7]==computer)
+			board[1] = computer;
+		else if(board[2]==computer && board[5]==computer && board[8]==0)
+			board[8] = computer;
+		else if(board[2]==computer && board[5]==0 && board[8]==computer)
+			board[5] = computer;
+		else if(board[2]==0 && board[5]==computer && board[8]==computer)
+			board[2] = computer;
+		else if(board[3]==computer && board[6]==computer && board[9]==0)
+			board[9] = computer;
+		else if(board[3]==computer && board[6]==0 && board[9]==computer)
+			board[6] = computer;
+		else if(board[3]==0 && board[6]==computer && board[9]==computer)
+			board[3] = computer;
+		else if(board[1]==computer && board[5]==computer && board[9]==0)
+			board[9] = computer;
+		else if(board[1]==computer && board[5]==0 && board[9]==computer)
+			board[5] = computer;
+		else if(board[1]==0 && board[5]==computer && board[9]==computer)
+			board[1] = computer;
+		else if(board[3]==computer && board[5]==computer && board[7]==0)
+			board[7] = computer;
+		else if(board[3]==computer && board[5]==0 && board[7]==computer)
+			board[5] = computer;
+		else if(board[3]==0 && board[5]==computer && board[7]==computer)
+			board[3] = computer;
+		else
+			return false;
+		return true;
+	}
 
 }

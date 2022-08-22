@@ -16,6 +16,7 @@ public class TicTacMain {
 		//Initiating toss
 		int toss=board.toss();
 
+
 	}
 
 }
