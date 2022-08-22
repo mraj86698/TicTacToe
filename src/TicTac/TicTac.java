@@ -232,5 +232,91 @@ public class TicTac {
 			return false;
 		return true;
 	}
+	/**Provides Computer logic to block player from winning.
+	 * @param CharArray containing x and o
+	 * @return true-Move completed <br>
+	 * false-Move Not Possible
+	 */
+	public boolean computerMoveToBlockPlayerWin(char[] input) {
+		//find char of Player and Comp
+		char player=input[0];
+		char computer=input[1];
+
+		//makes Comp move in order to block player get sequence
+		if(board[1]==player && board[2]==player && board[3]==0)
+			board[3] = computer;
+		else if(board[1]==player && board[2]==0 && board[3]==player)
+			board[2] = computer;
+		else if(board[1]==0 && board[2]==player && board[3]==player)
+			board[1] = computer;
+		else if(board[4]==player && board[5]==player && board[6]==0)
+			board[6] = computer;
+		else if(board[4]==player && board[5]==0 && board[6]==player)
+			board[5] = computer;
+		else if(board[4]==0 && board[5]==player && board[6]==player)
+			board[4] = computer;
+		else if(board[7]==player && board[8]==player && board[9]==0)
+			board[9] = computer;
+		else if(board[7]==player && board[8]==0 && board[9]==player)
+			board[8] = computer;
+		else if(board[7]==0 && board[8]==player && board[9]==player)
+			board[7] = computer;
+		else if(board[1]==player && board[4]==player && board[7]==0)
+			board[7] = computer;
+		else if(board[1]==player && board[4]==0 && board[7]==player)
+			board[4] = computer;
+		else if(board[1]==0 && board[4]==player && board[7]==player)
+			board[1] = computer;
+		else if(board[2]==player && board[5]==player && board[8]==0)
+			board[8] = computer;
+		else if(board[2]==player && board[5]==0 && board[8]==player)
+			board[5] = computer;
+		else if(board[2]==0 && board[5]==player && board[8]==player)
+			board[2] = computer;
+		else if(board[3]==player && board[6]==player && board[9]==0)
+			board[9] = computer;
+		else if(board[3]==player && board[6]==0 && board[9]==player)
+			board[6] = computer;
+		else if(board[3]==0 && board[6]==player && board[9]==player)
+			board[3] = computer;
+		else if(board[1]==player && board[5]==player && board[9]==0)
+			board[9] = computer;
+		else if(board[1]==player && board[5]==0 && board[9]==player)
+			board[5] = computer;
+		else if(board[1]==0 && board[5]==player && board[9]==player)
+			board[1] = computer;
+		else if(board[3]==player && board[5]==player && board[7]==0)
+			board[7] = computer;
+		else if(board[3]==player && board[5]==0 && board[7]==player)
+			board[5] = computer;
+		else if(board[3]==0 && board[5]==player && board[7]==player)
+			board[3] = computer;
+		else {
+			return false;
+		}
+		return true;
+	}
+	/**Provides Computer logic to take available corners
+	 * @param CharArray containing x and o
+	 * @return true-Move completed <br>
+	 * false-Move Not Possible
+	 */
+	public boolean computerMoveToTakeCorner(char[] input) {
+		//choose which char to put in board
+		char computer=input[1];
+
+		//move to take corner
+		if(checkMoveOk(1)!=0)
+			board[1] = computer;
+		else if(checkMoveOk(3)!=0)
+			board[3] = computer;
+		else if(checkMoveOk(7)!=0)
+			board[7] = computer;
+		else if(checkMoveOk(9)!=0)
+			board[9] = computer;
+		else
+			return false;
+		return true;
+	}
 
 }
