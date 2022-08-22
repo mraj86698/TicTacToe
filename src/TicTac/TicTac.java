@@ -318,5 +318,26 @@ public class TicTac {
 			return false;
 		return true;
 	}
+	/**Provides Computer logic to take center and available spaces
+	 * @param CharArray containing x and o
+	 *
+	 */
+	public void computerMoveToAvailableSpace(char[] input) {
+		//choose which char to put in board
+		char compLetter=input[1];
+
+		//move to take center
+		if(checkMoveOk(5)!=0)
+			board[5] = compLetter;
+		//move to take rest positions
+		else if(checkMoveOk(2)!=0)
+			board[2] = compLetter;
+		else if(checkMoveOk(4)!=0)
+			board[4] = compLetter;
+		else if(checkMoveOk(6)!=0)
+			board[6] = compLetter;
+		else if(checkMoveOk(8)!=0)
+			board[8] = compLetter;
+	}
 
 }
