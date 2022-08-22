@@ -17,16 +17,31 @@ public class TicTacMain {
 		int toss=board.toss();
 		switch(toss) {
 		case 1:{
-
+			do {
 				board.playerMove(input);
 				board.showBoard();
-				break;
+				//check for game over
+				if(board.checkGameOver(input, 0)) {
+					break;
+				}
+				board.compMove(input);
+				board.showBoard();
+			}while(!board.checkGameOver(input, 1));
+			break;
 		}
 		case 0:{
-
+			do {
+				board.compMove(input);
+				board.showBoard();
+				//check for game over
+				if(board.checkGameOver(input, 1)) {
+					break;
+				}
 				board.playerMove(input);
 				board.showBoard();
-		}
+			}while(!board.checkGameOver(input, 0));
+			break;
+			}
 		}
 	}
 

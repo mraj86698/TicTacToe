@@ -339,5 +339,36 @@ public class TicTac {
 		else if(checkMoveOk(8)!=0)
 			board[8] = compLetter;
 	}
+	/**
+	 * Internally calls all Computer Move sub methods
+	 * @param CharArray containing x and o
+	 */
+	public void compMove(char[] input) {
+		//Calling all computer movement sub-methods sequentially.
+		if(!computerMoveToWin(input)) {
+			if(!computerMoveToBlockPlayerWin(input)) {
+				if(!computerMoveToTakeCorner(input)) {
+					if(!computerMoveToTakeCorner(input)) {
+						computerMoveToAvailableSpace(input);
+					}
+				}
+			}
+		}
+	}
+
+	/**Checks for game end condition
+	 * @param CharArray containing x and o
+	 * @param player
+	 * @return true-Game Over <br>
+	 * false-Game Continues
+	 */
+	public boolean checkGameOver(char[] input,int player) {
+		int gameStatus=getWinOrTie(input, player);
+		if(gameStatus==1)
+			System.out.println("-----Game Over-----");
+		else
+			return false;
+		return true;
+	}
 
 }
