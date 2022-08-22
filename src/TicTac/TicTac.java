@@ -60,5 +60,25 @@ public class TicTac {
 		}
 		return 0;
 	}
+	/**
+	 * Method to make user to move to desired location.
+	 * It takes user input from index 1 to 9.
+	 * If you enter invalid index or try to move to occupied index.
+	 * It prints error message else it moves the user letter to desired location.
+	 * @param i
+	 */
+	public int checkMoveOk(int index) {
+
+		if (index>=1 && index<=9) {
+			if ((board[index])==0) {
+				return index;
+			}else {
+				return 0;
+			}
+		}else {
+			System.out.println("Index out of bounds!");
+			return 0;
+		}
+	}
 
 }
