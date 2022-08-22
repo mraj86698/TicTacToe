@@ -121,5 +121,56 @@ public class TicTac {
 		}
 		return randomNum;
 	}
+	/**Method to check if Win/Tie/Loss Cond. is fulfilled
+	 * @param CharArray containing x and o
+	 * @param player
+	 * @return 0-Game Continues <br>
+	 * 1-Game Over Cond.
+	 */
+
+	public int getWinOrTie(char[] input,int player) {
+		char playerMove=input[player];
+		//Win Cond.
+		if(
+				//Horizontal Win Cond.
+				(board[1]==playerMove && board[2]==playerMove && board[3]==playerMove) ||
+				(board[4]==playerMove && board[5]==playerMove && board[6]==playerMove) ||
+				(board[7]==playerMove && board[8]==playerMove && board[9]==playerMove) ||
+
+				//Vertical Win Cond.
+				(board[1]==playerMove && board[4]==playerMove && board[7]==playerMove) ||
+				(board[2]==playerMove && board[5]==playerMove && board[8]==playerMove) ||
+				(board[3]==playerMove && board[6]==playerMove && board[9]==playerMove) ||
+
+				//Cross Win Cond.
+				(board[1]==playerMove && board[5]==playerMove && board[9]==playerMove) ||
+				(board[3]==playerMove && board[5]==playerMove && board[7]==playerMove)
+				)
+		{
+			if (player==0) {
+				System.out.println("User has won!!");
+			}else {
+				System.out.println("Computer has won!!");
+			}
+			//1 returned to show game has ended.
+			return 1;
+		}
+		//No win - No Tie
+		for(int i=1;i<10;i++) {
+			if (checkMoveOk(i)!=0) {
+				if (player==0) {
+					System.out.println("Computer's Move.");
+				}else {
+					System.out.println("Player's Move");
+				}
+				//0 returned to switch moves
+				return 0;
+			}
+		}
+		//Last Cond-Tie
+		System.out.println("Its a tie.");
+		//1 returned to show game has ended.
+		return 1;
+	}
 
 }
