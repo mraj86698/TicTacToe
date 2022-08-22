@@ -48,5 +48,17 @@ public class TicTac {
 		}
 		return output;
 	}
+	/**
+	 * To Display The Current Board
+	 */
+	public int showBoard() {
+		for(int i=1;i<10;i++) {
+			if (i%3==0)
+				System.out.println(board[i]);
+			else
+				System.out.print(board[i]+" | ");
+		}
+		return 0;
+	}
 
 }

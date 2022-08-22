@@ -10,6 +10,9 @@ public class TicTacMain {
 		board.createBoard();
 		//asking for choice of char
 		char[] input=board.getInput();
+		//display empty board
+		System.out.println("Displaying empty board->");
+		board.showBoard();
 
 	}
 
